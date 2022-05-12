@@ -1,0 +1,58 @@
+﻿@model IEnumerable<_RegistrodeVentas.Models.VentasViewModel>
+
+@{
+    ViewData["Title"] = "Ver";
+}
+
+<h1>Ver datos</h1>
+
+<p>
+    <a asp-action="Registrar">Registrar Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioUnitario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioFinal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioFinal)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-controller="Presentacion" class="btn btn-lg btn-success" asp-action="Bienvenido">Volver</a>
+</p>
